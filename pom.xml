@@ -122,7 +122,6 @@
 					<organizationName>Board of Regents of the University of
 Wisconsin-Madison, Broad Institute of MIT and Harvard, and Max Planck
 Institute of Molecular Cell Biology and Genetics.</organizationName>
-					<projectName>SciJava Common shared library for SciJava software.</projectName>
 				</configuration>
 			</plugin>
 		</plugins>
