@@ -46,7 +46,7 @@ import org.scijava.script.ScriptLanguage;
  * @author Johannes Schindelin
  * @see ScriptEngine
  */
-@Plugin(type = ScriptLanguage.class)
+@Plugin(type = ScriptLanguage.class, name = "Clojure")
 public class ClojureScriptLanguage extends AbstractScriptLanguage {
 
 	@Override
