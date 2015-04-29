@@ -77,7 +77,7 @@
 
 	<ciManagement>
 		<system>Jenkins</system>
-		<url>https://jenkins.imagej.net/job/scripting-Clojure/</url>
+		<url>http://jenkins.imagej.net/job/scripting-Clojure/</url>
 	</ciManagement>
 
 	<dependencies>
