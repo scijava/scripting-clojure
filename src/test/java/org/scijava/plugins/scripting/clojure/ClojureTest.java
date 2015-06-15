@@ -44,7 +44,7 @@ import javax.script.ScriptException;
 
 import org.junit.Test;
 import org.scijava.Context;
-import org.scijava.plugins.scripting.clojure.ClojureScriptEngine;
+import org.scijava.script.AbstractScriptLanguageTest;
 import org.scijava.script.ScriptLanguage;
 import org.scijava.script.ScriptModule;
 import org.scijava.script.ScriptService;
@@ -54,7 +54,12 @@ import org.scijava.script.ScriptService;
  * 
  * @author Johannes Schindelin
  */
-public class ClojureTest {
+public class ClojureTest extends AbstractScriptLanguageTest {
+
+	@Test
+	public void testDiscovery() {
+		assertDiscovered(ClojureScriptLanguage.class);
+	}
 
 	@Test
 	public void testBasic() throws InterruptedException, ExecutionException,
