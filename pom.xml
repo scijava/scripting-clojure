@@ -104,6 +104,7 @@
 			<groupId>org.scijava</groupId>
 			<artifactId>scijava-common</artifactId>
 			<classifier>tests</classifier>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 
