@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>scripting-clojure</artifactId>
-	<version>0.1.4-SNAPSHOT</version>
+	<version>0.1.4</version>
 
 	<name>SciJava Scripting: Clojure</name>
 	<description>JSR-223-compliant Clojure scripting language plugin.</description>
@@ -76,7 +76,7 @@
 	<scm>
 		<connection>scm:git:git://github.com/scijava/scripting-clojure</connection>
 		<developerConnection>scm:git:git@github.com:scijava/scripting-clojure</developerConnection>
-		<tag>HEAD</tag>
+		<tag>scripting-clojure-0.1.4</tag>
 		<url>https://github.com/scijava/scripting-clojure</url>
 	</scm>
 	<issueManagement>
