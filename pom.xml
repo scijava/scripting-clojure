@@ -52,16 +52,6 @@
 		</developer>
 	</developers>
 
-	<mailingLists>
-		<mailingList>
-			<name>SciJava</name>
-			<subscribe>https://groups.google.com/group/scijava</subscribe>
-			<unsubscribe>https://groups.google.com/group/scijava</unsubscribe>
-			<post>scijava@googlegroups.com</post>
-			<archive>https://groups.google.com/group/scijava</archive>
-		</mailingList>
-	</mailingLists>
-
 	<scm>
 		<connection>scm:git:git://github.com/scijava/scripting-clojure</connection>
 		<developerConnection>scm:git:git@github.com:scijava/scripting-clojure</developerConnection>
