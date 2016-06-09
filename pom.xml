@@ -63,6 +63,11 @@
 			<url>http://imagej.net/User:Albertcardona</url>
 			<properties><id>acardona</id></properties>
 		</contributor>
+		<contributor>
+			<name>Kyle Harrington</name>
+			<url>http://imagej.net/User:Kharrington</url>
+			<properties><id>kephale</id></properties>
+		</contributor>
 	</contributors>
 
 	<scm>
