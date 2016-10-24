@@ -77,6 +77,10 @@
 		<url>http://jenkins.imagej.net/job/scripting-Clojure/</url>
 	</ciManagement>
 
+	<properties>
+		<clojure.version>1.7.0</clojure.version>
+	</properties>
+
 	<dependencies>
 		<!-- SciJava dependencies -->
 		<dependency>
@@ -88,7 +92,7 @@
 		<dependency>
 			<groupId>org.clojure</groupId>
 			<artifactId>clojure</artifactId>
-			<version>1.7.0</version>
+			<version>${clojure.version}</version>
 		</dependency>
 
 		<!-- Test dependencies -->
