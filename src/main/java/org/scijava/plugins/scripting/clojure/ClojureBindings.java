@@ -32,11 +32,14 @@
 package org.scijava.plugins.scripting.clojure;
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import javax.script.Bindings;
 
+import clojure.lang.MapEntry;
+import clojure.lang.Namespace;
 import clojure.lang.RT;
 import clojure.lang.Symbol;
 import clojure.lang.Var;
@@ -75,7 +78,7 @@ public class ClojureBindings implements Bindings {
 
 	@Override
 	public boolean containsValue(final Object value) {
-		throw new UnsupportedOperationException();
+		return map().containsValue(value);
 	}
 
 	@Override
@@ -147,17 +150,33 @@ public class ClojureBindings implements Bindings {
 
 	@Override
 	public Set<String> keySet() {
-		throw new UnsupportedOperationException();
+		return map().keySet();
 	}
 
 	@Override
 	public Collection<Object> values() {
-		throw new UnsupportedOperationException();
+		return map().values();
 	}
 
 	@Override
 	public Set<Entry<String, Object>> entrySet() {
-		throw new UnsupportedOperationException();
+		return map().entrySet();
 	}
 
+	// -- Helper methods --
+
+	private static Map<String, Object> map() {
+		final Map<String, Object> map = new HashMap<String, Object>();
+
+		final Namespace ns = Namespace.find(Symbol.intern(null, USER_NS));
+		for (final Object el : ns.getMappings()) {
+			final MapEntry entry = (MapEntry) el;
+			final Symbol key = (Symbol) entry.key();
+			final Object value = Var.intern(ns, key).get();
+			if (value instanceof Var.Unbound) continue; // skip weird variables
+			map.put(key.getName(), value);
+		}
+
+		return map;
+	}
 }
