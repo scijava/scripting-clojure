@@ -48,11 +48,14 @@ import javax.script.Bindings;
  */
 public class ClojureBindings implements Bindings {
 
+	private static final String CORE_NS = "clojure.core";
+	private static final String USER_NS = "user";
+
 	public ClojureBindings() {
-		final Var nameSpace = RT.var("clojure.core", "*ns*");
+		final Var nameSpace = RT.var(CORE_NS, "*ns*");
 		Var.pushThreadBindings(RT.map(nameSpace, nameSpace.get()));
-		RT.var("clojure.core", "in-ns").invoke(Symbol.intern("user"));
-		RT.var("clojure.core", "refer").invoke(Symbol.intern("clojure.core"));
+		RT.var(CORE_NS, "in-ns").invoke(Symbol.intern(USER_NS));
+		RT.var(CORE_NS, "refer").invoke(Symbol.intern(CORE_NS));
 	}
 
 	@Override
@@ -81,7 +84,7 @@ public class ClojureBindings implements Bindings {
 		final int dot = key.lastIndexOf('.');
 		final String nameSpace;
 		if (dot < 0) {
-			nameSpace = "user";
+			nameSpace = USER_NS;
 		}
 		else {
 			nameSpace = key.substring(0, dot);
@@ -104,7 +107,7 @@ public class ClojureBindings implements Bindings {
 		final int dot = name.lastIndexOf('.');
 		final String nameSpace, key;
 		if (dot < 0) {
-			nameSpace = "user";
+			nameSpace = USER_NS;
 			key = name;
 		}
 		else {
