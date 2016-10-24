@@ -31,15 +31,15 @@
 
 package org.scijava.plugins.scripting.clojure;
 
-import clojure.lang.RT;
-import clojure.lang.Symbol;
-import clojure.lang.Var;
-
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 
 import javax.script.Bindings;
+
+import clojure.lang.RT;
+import clojure.lang.Symbol;
+import clojure.lang.Var;
 
 /**
  * A {@link Bindings} wrapper around Clojure's local variables.
