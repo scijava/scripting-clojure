@@ -50,6 +50,11 @@ import org.scijava.script.ScriptLanguage;
 public class ClojureScriptLanguage extends AbstractScriptLanguage {
 
 	@Override
+	public String getEngineName() {
+		return "clojure";
+	}
+
+	@Override
 	public List<String> getExtensions() {
 		return Arrays.asList("clj");
 	}
