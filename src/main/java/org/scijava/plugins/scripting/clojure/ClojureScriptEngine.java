@@ -33,6 +33,7 @@ package org.scijava.plugins.scripting.clojure;
 
 import clojure.lang.Compiler;
 import clojure.lang.LispReader;
+import clojure.lang.Var;
 
 import java.io.PushbackReader;
 import java.io.Reader;
@@ -71,7 +72,14 @@ public class ClojureScriptEngine extends AbstractScriptEngine
 		setup();
 		try {
 			final Object filename = get(ScriptEngine.FILENAME);
-			if (filename != null) put("clojure.core.*file*", filename);
+			if (filename == null || filename instanceof Var.Unbound) {
+				// make up a fake filename, to make clojure happy
+				put("clojure.core.*file*", "/clojure-dynamic-script");
+			}
+			else {
+				// use the real filename
+				put("clojure.core.*file*", filename);
+			}
 			final Thread thread = Thread.currentThread();
 			Object finalResult = null;
 			while (!thread.isInterrupted()) {
