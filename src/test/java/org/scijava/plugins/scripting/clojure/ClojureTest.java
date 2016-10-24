@@ -32,6 +32,9 @@
 package org.scijava.plugins.scripting.clojure;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.IOException;
@@ -114,4 +117,27 @@ public class ClojureTest extends AbstractScriptLanguageTest {
 		assertEquals(expected, actual);
 	}
 
+	@Test
+	public void testBindings() {
+		final Context context = new Context(ScriptService.class);
+		final ScriptService scriptService = context.getService(ScriptService.class);
+
+		ScriptLanguage clojure = scriptService.getLanguageByName("clojure");
+		assertSame(ClojureScriptLanguage.class, clojure.getClass());
+
+		final ScriptEngine engine = clojure.getScriptEngine();
+		final Bindings bindings = engine.getBindings(ScriptContext.ENGINE_SCOPE);
+		final int bSize = bindings.size();
+
+		assertEquals(bSize, bindings.keySet().size());
+		assertFalse(bindings.keySet().contains("foo"));
+
+		engine.put("foo", "bar");
+		assertEquals("bar", engine.get("foo"));
+		assertEquals("bar", bindings.get("foo"));
+		assertEquals(bSize + 1, bindings.size());
+
+		assertEquals(bSize + 1, bindings.keySet().size());
+		assertTrue(bindings.keySet().contains("foo"));
+	}
 }
