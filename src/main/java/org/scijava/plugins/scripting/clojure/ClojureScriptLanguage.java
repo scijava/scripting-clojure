@@ -40,6 +40,8 @@ import org.scijava.plugin.Plugin;
 import org.scijava.script.AbstractScriptLanguage;
 import org.scijava.script.ScriptLanguage;
 
+import clojure.lang.Var;
+
 /**
  * An adapter of the Clojure interpreter to the SciJava scripting interface.
  * 
@@ -64,4 +66,9 @@ public class ClojureScriptLanguage extends AbstractScriptLanguage {
 		return new ClojureScriptEngine();
 	}
 
+	@Override
+	public Object decode(final Object object) {
+		if (object instanceof Var.Unbound) return null;
+		return object;
+	}
 }
