@@ -73,8 +73,8 @@
 		<url>https://github.com/scijava/scripting-clojure/issues</url>
 	</issueManagement>
 	<ciManagement>
-		<system>Jenkins</system>
-		<url>http://jenkins.imagej.net/job/scripting-Clojure/</url>
+		<system>Travis CI</system>
+		<url>https://travis-ci.org/scijava/scripting-clojure</url>
 	</ciManagement>
 
 	<properties>
