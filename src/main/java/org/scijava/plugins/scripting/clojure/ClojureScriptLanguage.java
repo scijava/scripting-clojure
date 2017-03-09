@@ -2,7 +2,7 @@
  * #%L
  * JSR-223-compliant Clojure scripting language plugin.
  * %%
- * Copyright (C) 2008 - 2015 Board of Regents of the University of
+ * Copyright (C) 2013 - 2017 Board of Regents of the University of
  * Wisconsin-Madison, Broad Institute of MIT and Harvard, and Max Planck
  * Institute of Molecular Cell Biology and Genetics.
  * %%
