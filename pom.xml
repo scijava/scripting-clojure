@@ -10,7 +10,7 @@
 	</parent>
 
 	<artifactId>scripting-clojure</artifactId>
-	<version>0.1.6-SNAPSHOT</version>
+	<version>0.1.7-SNAPSHOT</version>
 
 	<name>SciJava Scripting: Clojure</name>
 	<description>JSR-223-compliant Clojure scripting language plugin.</description>
