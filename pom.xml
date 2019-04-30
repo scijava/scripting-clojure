@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>org.scijava</groupId>
 		<artifactId>pom-scijava</artifactId>
-		<version>17.1.1</version>
+		<version>26.0.0</version>
 		<relativePath />
 	</parent>
 
@@ -99,8 +99,8 @@ Wisconsin-Madison, Broad Institute of MIT and Harvard, and Max Planck
 Institute of Molecular Cell Biology and Genetics.</license.copyrightOwners>
 		<clojure.version>1.8.0</clojure.version>
 
-		<!-- NB: Deploy releases to the ImageJ Maven repository. -->
-		<releaseProfiles>deploy-to-imagej</releaseProfiles>
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>deploy-to-scijava</releaseProfiles>
 	</properties>
 
 	<dependencies>
