@@ -1,3 +1,5 @@
+[![](https://github.com/scijava/scripting-clojure/actions/workflows/build-main.yml/badge.svg)](https://github.com/scijava/scripting-clojure/actions/workflows/build-main.yml)
+
 # Clojure Scripting
 
 This library provides a
