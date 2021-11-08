@@ -77,7 +77,7 @@
 	</mailingLists>
 
 	<scm>
-		<connection>scm:git:git://github.com/scijava/scripting-clojure</connection>
+		<connection>scm:git:https://github.com/scijava/scripting-clojure</connection>
 		<developerConnection>scm:git:git@github.com:scijava/scripting-clojure</developerConnection>
 		<tag>HEAD</tag>
 		<url>https://github.com/scijava/scripting-clojure</url>
